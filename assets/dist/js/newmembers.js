@@ -672,28 +672,27 @@ lostItemForm.addEventListener("submit", async function(event) {
 	const otherPhotos = document.getElementById("otherPhotos");
 	const itemName = document.getElementById("itemName").value;
     const itemLocation = document.getElementById("itemLocation").value;
-
+	const itemId = generateUniqueId();
    // Obtém o arquivo da imagem principal
    const mainPhotoFile = mainPhoto.files[0];
 
    // Obtém os arquivos das outras fotos
    const otherPhotoFiles = Array.from(otherPhotos.files);
 
-   // Converte a imagem principal em base64
-   const mainPhotoBase64 = await convertToBase64(mainPhotoFile);
+   const mainPhotoURL = await uploadImageToStorage(mainPhotoFile);
 
-   // Converte as outras fotos em base64
-   const otherPhotosBase64 = await Promise.all(
-	   otherPhotoFiles.map(async photoFile => await convertToBase64(photoFile))
-   );
+    const otherPhotoURLs = await Promise.all(
+        otherPhotoFiles.map(async photoFile => await uploadImageToStorage(photoFile))
+    );
 
     const formData = {
+		id: itemId,
         itemName: itemName,
         itemLocation: itemLocation,
         province: document.getElementById("Alcaldia").value,
         district: document.getElementById("colonia").value,
-        mainPhoto: mainPhotoBase64,
-        otherPhotos: otherPhotosBase64,
+        mainPhoto: mainPhotoURL,
+        otherPhotos: otherPhotoURLs,
 		timestamp: timestamp
     };
 
@@ -702,13 +701,15 @@ lostItemForm.addEventListener("submit", async function(event) {
 
     db.collection('itensPerdidos').add(
 		formData
-	).then(() => {
+	).then(docRef => {
 		 // Limpa o formulário
+		 formData.id = docRef.id
 		 lostItemForm.reset();
 		 mainPhotoPreview.style.display = "none";
 		 mainPhotoPreview.src = "";
 		 otherPhotosPreview.innerHTML = "";
 		alert("Item perdido adicionado com sucesso!");
+		window.location.reload();
 	}).catch(error => {
 		console.log('Ocorreu um erro', error);
 		alert("Ocorreu um erro ao adicionar o item perdido.");
@@ -728,14 +729,28 @@ function convertToBase64(file) {
 }
 
 
-
-
-
-
 //Fim add item
+
+//-----Salvando Fotos no Store
+async function uploadImageToStorage(imageFile) {
+    const storageRef = firebase.storage().ref();
+    const imageRef = storageRef.child(imageFile.name);
+
+    await imageRef.put(imageFile);
+
+    const imageURL = await imageRef.getDownloadURL();
+    return imageURL;
+}
+//------ Fim salvar fotos
 
 // ---------------------------------- Fim Add Item
 
+//----------Funcao para criar ID
+function generateUniqueId() {
+    // Gere um ID único baseado no timestamp atual e um número aleatório
+    return Date.now() + Math.random().toString(36).substr(2, 9);
+}
+//-----------Fim funcao para criar ID
 //-----Add Pic Princiapl
 $(document).ready(function () {
     $("#mainPhoto").change(function () {

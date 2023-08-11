@@ -391,24 +391,25 @@ const clickGo = function(oId){
 						var testando="";
 		todosItemsFiltros.forEach(element =>{
 		if (workerSelecionado == element.id) {
-
+						console.log('Selecionado ', workerSelecionado);
+						
 						worklink = element.linkdistrict;
 						experiencia = element.experienciaDedistrict;
 						// allWorkslinks = worklink.split(";");
 						// allExperiencia = experiencia.split(";");
 
-						// for (var i = 0; i < allWorkslinks.length-1; i++) {
-						// 	let setImg = $('<div class="col-md-4">'+
-				        //       '<div class=" no-gutters border  flex-md-row mb-4 shadow-sm h-md-500 position-relative">'+
-				        //         '<div class="col-auto  d-flex flex-column position-static">'+
-				        //           '<img src="'+allWorkslinks[i]+'" alt="Sem foto de trabalho" class="img-fluid mx-auto d-block" style="height: auto; width: 100%">'+
-				        //         '</div>'+
+						for (var i = 0; i < element.otherPhotos.length; i++) {
+							let setImg = $('<div class="col-md-4">'+
+				              '<div class=" no-gutters border  flex-md-row mb-4 shadow-sm h-md-500 position-relative">'+
+				                '<div class="col-auto  d-flex flex-column position-static">'+
+				                  '<img src="'+element.otherPhotos[i]+'" alt="Sem foto de trabalho" class="img-fluid mx-auto d-block" style="height: auto; width: 100%">'+
+				                '</div>'+
 
 				                
-				        //       '</div>'+
-				        //     '</div>');
-				        //     worskImg.append(setImg);	
-						// }
+				              '</div>'+
+				            '</div>');
+				            worskImg.append(setImg);	
+						}
 
 						// for (var i = 0; i < allExperiencia.length; i++) {
 							
