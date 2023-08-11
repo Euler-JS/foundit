@@ -662,43 +662,73 @@ const loginReg = function()
 
 const lostItemForm = document.getElementById("lostItemForm");
 const mainPhotoPreview = document.getElementById("mainPhotoPreview");
-const otherPhotosPreview = document.getElementById("otherPhotosPreview");
+const otherPhotosPreview = document.getElementById("selectedPhotosPreview");
+const selectedOtherPhotos = [];
 
 // Adicionar item
-lostItemForm.addEventListener("submit", function(event) {
+lostItemForm.addEventListener("submit", async function(event) {
     event.preventDefault();
-
-    const itemName = document.getElementById("itemName").value;
+	const timestamp = firebase.firestore.FieldValue.serverTimestamp();
+	const otherPhotos = document.getElementById("otherPhotos");
+	const itemName = document.getElementById("itemName").value;
     const itemLocation = document.getElementById("itemLocation").value;
 
-    const mainPhoto = document.getElementById("mainPhoto").files[0];
-    const otherPhotos = Array.from(document.getElementById("otherPhotos").files);
+   // Obtém o arquivo da imagem principal
+   const mainPhotoFile = mainPhoto.files[0];
 
-    // Exibe a foto principal selecionada
-    mainPhotoPreview.style.display = "block";
-    mainPhotoPreview.src = URL.createObjectURL(mainPhoto);
+   // Obtém os arquivos das outras fotos
+   const otherPhotoFiles = Array.from(otherPhotos.files);
 
-    // Exibe as outras fotos selecionadas
-    otherPhotosPreview.innerHTML = "";
-    otherPhotos.forEach(photo => {
-        const img = document.createElement("img");
-        img.src = URL.createObjectURL(photo);
-        img.alt = "Outra Foto";
-        img.style.maxWidth = "200px";
-        otherPhotosPreview.appendChild(img);
-    });
+   // Converte a imagem principal em base64
+   const mainPhotoBase64 = await convertToBase64(mainPhotoFile);
 
-    // Faça algo com os dados, como enviar para um servidor ou salvá-los localmente
+   // Converte as outras fotos em base64
+   const otherPhotosBase64 = await Promise.all(
+	   otherPhotoFiles.map(async photoFile => await convertToBase64(photoFile))
+   );
 
-    // Exemplo de feedback para o usuário
-    alert("Item registrado com sucesso!");
+    const formData = {
+        itemName: itemName,
+        itemLocation: itemLocation,
+        province: document.getElementById("Alcaldia").value,
+        district: document.getElementById("colonia").value,
+        mainPhoto: mainPhotoBase64,
+        otherPhotos: otherPhotosBase64,
+		timestamp: timestamp
+    };
 
-    // Limpa o formulário
-    lostItemForm.reset();
-    mainPhotoPreview.style.display = "none";
-    mainPhotoPreview.src = "";
-    otherPhotosPreview.innerHTML = "";
+    // const formDataJSON = JSON.stringify(formData);
+    // localStorage.setItem("formData", formDataJSON);
+
+    db.collection('itensPerdidos').add(
+		formData
+	).then(() => {
+		 // Limpa o formulário
+		 lostItemForm.reset();
+		 mainPhotoPreview.style.display = "none";
+		 mainPhotoPreview.src = "";
+		 otherPhotosPreview.innerHTML = "";
+		alert("Item perdido adicionado com sucesso!");
+	}).catch(error => {
+		console.log('Ocorreu um erro', error);
+		alert("Ocorreu um erro ao adicionar o item perdido.");
+	});
+
+   
 });
+
+// Função para converter uma imagem em base64
+function convertToBase64(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = error => reject(error);
+        reader.readAsDataURL(file);
+    });
+}
+
+
+
 
 
 
@@ -727,32 +757,34 @@ const otherPhotosInput = document.getElementById("otherPhotos");
 const selectedPhotosPreview = document.getElementById("selectedPhotosPreview");
 
 otherPhotosInput.addEventListener("change", function() {
-	const selectedPhotos = Array.from(otherPhotosInput.files);
+	selectedPhotosPreview.innerHTML = "";
+    const selectedPhotos = Array.from(otherPhotosInput.files);
   
-	selectedPhotos.forEach(photo => {
-	  const imgContainer = document.createElement("div");
-	  imgContainer.classList.add("selected-photo-container");
+    selectedPhotos.forEach(photo => {
+        const imgContainer = document.createElement("div");
+        imgContainer.classList.add("selected-photo-container");
   
-	  const img = document.createElement("img");
-	  img.src = URL.createObjectURL(photo);
-	  img.alt = "Selected Photo";
+        const img = document.createElement("img");
+        img.src = URL.createObjectURL(photo);
+        img.alt = "Selected Photo";
   
-	  const deleteBtn = document.createElement("button");
-	  deleteBtn.innerText = "Apagar";
-	  deleteBtn.classList.add("delete-btn");
-	  deleteBtn.addEventListener("click", function() {
-		imgContainer.remove();
-	  });
+        const deleteBtn = document.createElement("button");
+        deleteBtn.innerText = "Apagar";
+        deleteBtn.classList.add("delete-btn");
+        deleteBtn.addEventListener("click", function() {
+			// console.log('Valor ', otherPhotosInput.value);
+            imgContainer.remove();
+        });
   
-	  imgContainer.appendChild(img);
-	  imgContainer.appendChild(deleteBtn);
+        imgContainer.appendChild(img);
+        imgContainer.appendChild(deleteBtn);
   
-	  selectedPhotosPreview.appendChild(imgContainer);
-	});
+        selectedPhotosPreview.appendChild(imgContainer);
+    });
   
-	// Limpa o valor do input após adicionar as fotos
-	otherPhotosInput.value = null;
-  });
+    // Limpa o valor do input após adicionar as fotos
+    // otherPhotosInput.value = null;	
+});
   
   // ... Resto do seu código ...
   
