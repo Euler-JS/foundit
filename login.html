@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background : url("t3.png");
+}
+
+.b{
+       
+      }
+
+* {
+  box-sizing: border-box;
+}
+
+/* style the container */
+.container-login {
+  position: relative;
+  border-radius: 5px;
+  width: 1080px;
+  /*background-color: #f2f2f2;*/
+
+  padding: 20px 0 30px 0;
+} 
+
+/* style inputs and link buttons */
+input,
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  margin: 5px 0;
+  opacity: 0.85;
+  display: inline-block;
+  font-size: 17px;
+  line-height: 20px;
+  text-decoration: none; /* remove underline from anchors */
+}
+
+input:hover,
+.btn-login:hover {
+  opacity: 1;
+}
+
+/* add appropriate colors to fb, twitter and google buttons */
+.fb {
+  background-color: #3B5998;
+  color: white;
+}
+
+.twitter {
+  background-color: #55ACEE;
+  color: white;
+}
+
+.google {
+  background-color: #dd4b39;
+  color: white;
+}
+
+/* style the submit button */
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* Two-column layout */
+.col-login {
+  float: left;
+  width: 50%;
+  margin: auto;
+  padding: 0 50px;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row-login:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* vertical line */
+.vl-login {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  border: 2px solid #ddd;
+  height: 175px;
+}
+
+/* text inside the vertical line */
+.vl-innertext-login {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 8px 10px;
+}
+
+/* hide some text on medium and large screens */
+.hide-md-lg {
+  display: none;
+}
+
+/* bottom container */
+.bottom-container-login {
+  text-align: center;
+  background-color: #000;
+  border-radius: 0px 0px 4px 4px;
+}
+
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 650px) {
+  .col-login {
+    width: 100%;
+    margin-top: 0;
+  }
+  /* hide the vertical line */
+  .vl-login {
+    display: none;
+  }
+  /* show the hidden text on small screens */
+  .hide-md-lg {
+    display: block;
+    text-align: center;
+  }
+}
+</style>
+
+
+<link href="assets/dist/css/bootstrap.css" rel="stylesheet">
+<link href="assets/dist/css/workersCard.css" rel="stylesheet">
+<link href="assets/dist/css/blog.css" rel="stylesheet">
+<link href="assets/dist/css/slideperfil.css" rel="stylesheet">
+<link href="assets/dist/css/w3css.css" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="assets/dist/css/dialog-polyfill.css" />
+
+<link rel="stylesheet" href="assets/dist/css/material.min.css">
+  <script src="assets/dist/js/material.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-red.min.css" />
+
+
+    <link href="w4.css" rel="stylesheet">
+</head>
+<body >
+
+
+
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+  <!-- Brand -->
+  <a class="navbar-brand b" href="index.html">FoundIt</a>
+
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link b" style="color:white" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link b" style="color:white" href="workers.html">Procurar</a
+      </li>
+      <li class="nav-item">
+        <a class="nav-link b " style="color:white" href="vagas.html">Vagas de Emprego</a>
+      </li>
+      
+     
+ 
+      <li class="nav-item">
+        <a class="nav-link b" style="color:white" href="meuPerfil.html">Meu Perfil</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link b" style="color:white" href="sobre.html">Sobre nós</a>
+      </li>
+
+      <li class="nav-item active">
+        <a class="nav-link b" style="color:cyan" href="login.html">Login</a>
+      </li>
+
+      
+    </ul>
+
+
+  </div>
+
+  <!-- Navbar links -->
+  
+</nav>
+
+<!--
+
+Luis ssene 
+87/847166036
+Beira Sofala
+Instalador de antenas parabólica e sistema Cctv
+????
+
+Luiszichaimaneussene@gmail.com
+
+Instalacao de antenas parabólica Dstv; Instalacao de antenas parabólica Zap; Instalacao de antenas parabólica starTimes; sistema Cctv
+
+-->
+
+<!--<dialog class="mdl-dialog " id="show-dialogNovaSenha">
+          <h4 class="mdl-dialog__title">Digite o teu email</h4>
+          <div class="mdl-dialog__content">
+            <form action="#">
+              
+          <div class="mdl-textfield mdl-js-textfield ">
+            
+            <input type="email" name="" class="mdl-textfield__input" type="text" rows= "4" id="NovaSenha1A" >
+
+            <label class="mdl-textfield__label" for="NovaSenha1A">Email</label>
+        </div>
+      </form>
+          </div>
+          <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button saveNovaSenha">Recuperrar passaword</button>
+            <button type="button" class="mdl-button closeNovaSenha">Cancelar</button>
+          </div>
+    </dialog>-->
+
+
+<div class="container-login container" id="formLogin">
+  <h4 style="text-align: center; margin-top: 10%;">Login no FoundIt</h4>
+  
+    <div class="row-login">
+      
+      <div class="vl-login">
+        <span class="vl-innertext-login">ou</span>
+      </div>
+
+      <div class="col-login">
+
+        <input type="email" id="emailCreat" placeholder="email" required>
+        <input type="password" id="passwordCreat" placeholder="Password" required>
+        <input type="password" id="passwordCreatConfir" placeholder="Confirme password" required>
+         <!--Criar conta-->
+
+
+          <div class="container w3-card "  id="bBodyCriarConta" style="display: none;">
+            <label style="font-size: 18px;">Criando conta ... Por favor aguarde. </label>
+            <img src="assets/img/icon/eucorp.jpg" style="width: 80px; height: auto; " class="mx-auto d-block bd-placeholder-img rounded-circle mdl-spinner mdl-js-spinner is-active">
+
+            
+          </div>  
+        
+     
+
+<!--Fim Loading Criar conta-->
+        <button class=" btn-login bg-danger" id="criarContaLogin" >
+          Criar Conta
+         </button>
+        
+       
+      </div>
+
+
+    
+
+
+    
+
+      <div class="col-login">
+        <div class="hide-md-lg">
+          <p>Or sign in manually:</p>
+        </div>
+
+        <input type="email" id="emailLogin" name="email" placeholder="email">
+        <input type="password" id="passwordLogin" name="password" placeholder="Password" >
+        <!--Loading-->
+
+
+          <div class="container w3-card"  id="bBodyLogin" style="display: none;" >
+            <label style="font-size: 18px;" id="lblLogin">Fazendo Login... Por favor aguarde. </label>
+            <img src="assets/img/icon/eucorp.jpg" style="width: 80px; height: auto; " class="mx-auto d-block bd-placeholder-img rounded-circle mdl-spinner mdl-js-spinner is-active">
+
+            
+          </div>  
+        
+     
+
+<!--Fim Loading-->
+        <button type="submit" id="loginLogin"  class="fb btn-login" value="Login" data-toggle="modal" data-target="#exampleModal2">Login</button>
+         <!--Criar conta-->
+
+
+          <div class="container w3-card "  id="bBodyRecuperarConta" style="display: none;">
+            <label style="font-size: 18px;">Processando ... Por favor aguarde. </label>
+            <img src="assets/img/icon/eucorp.jpg" style="width: 80px; height: auto; " class="mx-auto d-block bd-placeholder-img rounded-circle mdl-spinner mdl-js-spinner is-active">
+
+            
+          </div>  
+        
+     
+
+<!--Fim Loading Criar conta-->
+        <button type="submit" id="dialogNovaSenha"  class="fb btn-login bg-dark" value="Login" data-toggle="modal" data-target="#exampleModal">Recuperar passowrd</button>
+      </div>
+      
+    </div>
+  
+</div>
+
+
+<div id="GoMyPerfil" class="container mx-auto " style="display: none; margin-top: 25%;" >
+        
+
+        
+        <a type="submit" href="meuPerfil.html" id="loginLogin"  class="fb btn-login btn-primary" value="Login">Ver Meu Perfil</a>
+
+        <a type="submit" href="index.html" id="loginLogin"   class="fb btn-login btn-primary" value="Login">Voltar a Página Inicial</a>
+      
+
+
+  
+</div>
+<!--<div class="bottom-container-login container bg-dark " style="margin-bottom: 35%" >
+  <div class="row-login">
+    <div class="col-login">
+      <a href="#" style="color:white" class="btn-login">Sign up</a>
+    </div>
+    <div class="col-login">
+      <a href="#" style="color:white" class="btn-login">Forgot password?</a>
+    </div>
+  </div>
+</div>-->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="background-image: url('t5.png'), url('t1.png') ;">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel" style="color:black; background-image: url('t5.png');">Redefinir Password</h3>
+      </div>
+
+          <div class="container" style="background-image: url('t5.png');">
+            <input type="email" name="" class="mdl-textfield__input" type="text" rows= "4" id="NovaSenha1A" placeholder="Digite teu email">
+
+            
+          </div>  
+        
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" id="pesquisarB" onclick="redefinerPassword()">Redefinir</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Modal -->
+
+
+
+
+
+
+
+
+
+
+<footer class="blog-footer w3-black" style="background-color: w3-dark">
+  <p><strong>Desenvolvido Por Euler Corporation</strong></p>
+  <p><a href="sobre.html" style="color: white">Sobre nós</a></p>
+  <p>
+    <a href="#" style="color: white">Back to top</a>
+  </p>
+
+  <p class="copyright"> Direitos Autorais &copy; 2020 Todos direitos reservados. Desenvolvido por João Alberto José Simango <br>
+      
+        </p>
+</footer>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-auth.js"></script>
+  
+  
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBuWvbVjhLHgMKuD8fO8Ih1j4Q9TK70qho",
+      authDomain: "htmlfirebaseteste1.firebaseapp.com",
+      databaseURL: "https://htmlfirebaseteste1.firebaseio.com",
+      projectId: "htmlfirebaseteste1",
+      storageBucket: "htmlfirebaseteste1.appspot.com",
+      messagingSenderId: "351877730271",
+      appId: "1:351877730271:web:c0261f6cfd04620f677e6a",
+      measurementId: "G-6TYSB94H5N"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+    const db = firebase.firestore();
+  </script>
+
+
+<script type="text/javascript" src="assets/dist/js/jquery.js"></script>
+<script type="text/javascript" src="assets/dist/js/loginSingUp.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+  
+</script>
+
+
+ 
+      <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/dist/js/bootstrap.bundle.js"></script>
+      <script src="https://w11p.netlify.app/w11p.js"></script>
+</body>
+
+<!-- Mirrored from www.w3schools.com/howto/tryit.asp?filename=tryhow_css_social_login by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 03 Aug 2020 00:20:30 GMT -->
+
+ <script type="text/javascript">
+         $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').trigger('focus')
+    });
+      </script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+</html>

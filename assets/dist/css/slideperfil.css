@@ -1,0 +1,425 @@
+.sidenaverfil {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #FFF;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  /*text-align:center;*/
+}
+
+.sidenaverfil a {
+  /*padding: 8px 8px 8px 32px;*/
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.sidenaverfil a:hover{
+  color: #f1f1f1;
+}
+
+.sidenaverfil .closebtn {
+  position: absolute;
+  top: 0;
+  /*right: 25px;
+  font-size: 36px;
+  /*margin-left: 50px;*/
+}
+
+/*@media screen and (max-height: 450px) {
+  .sidenaverfil {padding-top: 15px;}
+  .sidenaverfil a {font-size: 18px;}
+}*/
+
+.alltext 
+{
+  text-align: left;
+  margin: 4px;
+}
+
+
+
+
+
+
+.column-galeria {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column-galeria img {
+  opacity: 0.8;
+  cursor: pointer;
+  width: 300px;
+  height: 300px;
+}
+
+.column-galeria img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row-galeria:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container-galeria {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext-galeria {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the image */
+.closebtn-galeria {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+/*Slide */
+
+.sidenaverfil {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #FFF;
+  overflow-x: hidden;
+  transition: 0.5s;
+  /*padding-top: 60px;
+  /*text-align:center;*/
+
+}
+
+.sidenaverfil a {
+  /*padding: 8px 8px 8px 32px;*/
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+
+}
+
+.sidenaverfil a:hover{
+  color: #f1f1f1;
+}
+
+.sidenaverfil .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenaverfil {padding-top: 15px;}
+  .sidenaverfil a {font-size: 18px;}
+}
+
+.alltext 
+{
+  text-align: left;
+  margin: 4px;
+}
+
+
+column-galeria {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column-galeria img {
+  opacity: 0.8;
+  cursor: pointer;
+  width: 300px;
+  height: 300px;
+}
+
+.column-galeria img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row-galeria:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container (positioning is needed to position the close button and the text) */
+.container-galeria {
+  position: relative;
+  display: none;
+}
+
+/* Expanding image text */
+#imgtext-galeria {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  color: white;
+  font-size: 20px;
+}
+
+/* Closable button inside the image */
+.closebtn-galeria {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+
+/*Perfil Test*/
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal-l01 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 0px;
+
+}
+
+/* Modal Content/Box */
+.modal-content-l01 {
+  background-color: #fefefe;
+  margin: 1% auto 2% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 100%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+
+/*Goooooog Image*/
+
+
+/* Container needed to position the button. Adjust the width as needed */
+.containerImageButton {
+  position: relative;
+  width: 50%;
+}
+
+/* Make the image responsive */
+.containerImageButton img {
+  width: 100%;
+  height: auto;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.containerImageButton .btnImageButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  /*background-color: #555;*/
+  color: red;
+  font-size: 16px;
+ border: 2px solid red;
+  cursor: pointer;
+  
+  border-radius: 30px; 
+  margin:4px; 
+
+
+  background-color: Transparent;
+    background-repeat:no-repeat;
+   
+    overflow: hidden;
+    
+  
+}
+
+
+.containerImageButton .btnImageButtonGo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  /*background-color: #555;*/
+  
+ 
+  cursor: pointer;
+  
+  
+  
+
+
+  background-color: Transparent;
+    background-repeat:no-repeat;
+   
+    overflow: hidden;
+    
+  
+}
+
+
+.containerImageButton .btnImageButton:hover {
+  background-color: black;
+}
+
+.lead
+{
+  font-size: 24px;
+}
+
+
+
+/**/
+
+/* Center align the text within the three columns below the carousel */
+#contact .marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+#contact .marketing h2 {
+  font-weight: 400;
+}
+#contact .marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+
+/* Featurettes
+------------------------- */
+
+#contact .featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+#contact .featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.05rem;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+
+
+  #contact .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  #contact .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+.right {
+  float: left;
+  width: 300px;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+#contact svg{
+  
+}
+
+
+
+    
+
