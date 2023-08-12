@@ -316,7 +316,7 @@ criarTrabalhadores = function(todosItems)
 				let p1 = $('<label class="p-2"><b>'+element.district+'</b></label>')
 				let p2 = $('<label class="p-2">'+element.itemLocation+'</label>');
 				//let a = $('<a href="#"  class="stretched-link" style="color: white">Detalhes</a> onclick="clickGo()" id="Go"');*/
-				let button_ = $('<button style="border-radius:1px; width:100%; font-size:14px;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent bg-danger">Ver Perfil</button>');
+				let button_ = $('<button style="border-radius:1px; width:100%; font-size:14px;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent bg-danger">Ver Detalhes</button>');
 				
 
 				button_.on('click', () =>
@@ -376,7 +376,7 @@ const clickGo = function(oId){
 		workerSelecionado = oId;
 		let worskImg = $('<div class="row  w3-card  w3-white w3-container "> ');
 						testando = '<div class="row w3-white w3-container "> ';
-						let button_closePerfil = $('<div class="w3-card w3-container w3-white" style="width:100%;"><button onclick="clickClose()" style="border-radius:30px;width:50%; height:50px; font-size:14px; margin-top:5%; margin-bottom:5%;" class="btn-primary bg-danger mx-auto d-block">Fechar Perfil</button></div>');
+						let button_closePerfil = $('<div class="w3-card w3-container w3-white" style="width:100%;"><button onclick="clickClose()" style="border-radius:30px;width:50%; height:50px; font-size:14px; margin-top:5%; margin-bottom:5%;" class="btn-primary bg-danger mx-auto d-block">Fechar</button></div>');
 						let button_closePerfil1 = $('<div class="container">'+
 													  '<span onclick="clickClose()" class="closebtn-galeria">&times;</span>'+
 													  '<img id="expandedImg-galeria" style="width:100%">'+
@@ -453,12 +453,12 @@ const clickGo = function(oId){
 
 				    '<div class="w3-twothird">'+
 				      '<div class="w3-container w3-card w3-white w3-margin-bottom">'+
-				      '<h2 class="w3-text-grey w3-padding-16 alltext"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Detalhes do Perfil</h2>'+
+				      '<h2 class="w3-text-grey w3-padding-16 alltext"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Detalhes</h2>'+
 				      '<div class="w3-container">'+
 				          '<p class="alltext"><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>'+element.itemName+'</p>'+
 				          '<p class="alltext"><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>'+element.itemLocation+'</p>'+
-				          '<p class="alltext"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>'+element.emailU+'</p>'+
-				          '<p class="alltext"><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>'+element.numeroU+'</p>'+
+				          '<p class="alltext"><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>'+element.province+'</p>'+
+				          '<p class="alltext"><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>'+element.district+'</p>'+
 				          '<hr>'+  
 				          '<br>'+
 				          
@@ -473,7 +473,7 @@ const clickGo = function(oId){
 						//$('#gridImgWork').append(worskImg);
 						perfil.append('<div class=" w3-white w3-card w3-row-padding w3-container" style="margin-left:14px; margin-right:14px;" id="gridImgWork">'+
 				        '<h2 class="w3-text-grey w3-padding-16 alltext">'+
-				        '<i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Fotos de Trabalhos</h2></div></div></div><div class="w3-twothird">');
+				        '<i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Fotos</h2></div></div></div><div class="w3-twothird">');
 						perfil.append(worskImg);
 						
 						$('#id01').append(perfil);
