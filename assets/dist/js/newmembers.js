@@ -688,7 +688,8 @@ lostItemForm.addEventListener("submit", async function(event) {
     const formData = {
 		id: itemId,
         itemName: itemName,
-        itemLocation: itemLocation,
+        itemLocationDiscription: itemLocation,
+		itemLocation:document.getElementById("Alcaldia").value +", "+document.getElementById("colonia").value,
         province: document.getElementById("Alcaldia").value,
         district: document.getElementById("colonia").value,
         mainPhoto: mainPhotoURL,
@@ -708,7 +709,7 @@ lostItemForm.addEventListener("submit", async function(event) {
 		 mainPhotoPreview.style.display = "none";
 		 mainPhotoPreview.src = "";
 		 otherPhotosPreview.innerHTML = "";
-		alert("Item perdido adicionado com sucesso!");
+		alert("Item adicionado com sucesso!");
 		window.location.reload();
 	}).catch(error => {
 		console.log('Ocorreu um erro', error);

@@ -128,16 +128,8 @@ const renderPesquisa = function(ver, provincia, cidade)
 														{ 
 															todosItemsFiltros.push(singleItem);
 															console.log('Go '+element.itemName);
-															//console.log("Ola "+conta);
 														}
-														//conta = conta + 1;
-													
-														//console.log("Viu "+conta);
 													}
-
-													console.log("Cidade off");
-
-
 											}
 											else
 												{
