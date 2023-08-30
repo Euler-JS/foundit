@@ -165,3 +165,14 @@ h1, h2, h3, h4, h5, h6 {
   text-decoration: none;
 }
 
+
+/* Color */
+.demo-card-square > .mdl-card__title {
+  color: #fff;
+  background: bottom right 15% no-repeat #f1c528;
+}
+
+.mdl-button--accent.mdl-button--accent.mdl-button--raised, .mdl-button--accent.mdl-button--accent.mdl-button--fab {
+  color: rgb(255,255,255);
+  background-color: rgb(73 111 212);
+}

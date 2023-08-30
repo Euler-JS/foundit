@@ -282,7 +282,7 @@ criarTrabalhadores = function(todosItems)
 				  		
 						'</div>');	
 				
-				let button_ = $('<button style="border-radius:1px; width:100%; font-size:14px;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent bg-danger">Ver Detalhes</button>');
+				let button_ = $('<button style="border-radius:1px; width:100%; font-size:14px;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">Ver Detalhes</button>');
 				
 
 				button_.on('click', () =>
