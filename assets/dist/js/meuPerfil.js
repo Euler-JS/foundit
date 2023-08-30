@@ -139,7 +139,7 @@ const clickGo = function(a){
 			
 			document.getElementById('progress').style.display = 'none';
 			document.getElementById('elementsNavBar').style.visibility = 'visible';
-			document.getElementById('statusLoad').innerHTML = "FoundIt";
+			document.getElementById('statusLoad').innerHTML = "AS Pub";
 			iAm = true;
 
 

@@ -350,7 +350,7 @@ criarTrabalhadores = function(todosItems)
 
 				document.getElementById('progressWorkers').style.display = 'none';
 				document.getElementById('navBarWorkers').style.visibility = 'visible';
-				document.getElementById('statusLoadWorkers').innerHTML = "FoundIt";
+				document.getElementById('statusLoadWorkers').innerHTML = "AS Pub";
 				closeNavButton();
 				//todosItems = [];
 
@@ -360,7 +360,7 @@ criarTrabalhadores = function(todosItems)
 		{
 			document.getElementById('progressWorkers').style.display = 'none';
 			document.getElementById('navBarWorkers').style.visibility = 'visible';
-			document.getElementById('statusLoadWorkers').innerHTML = "FoundIt";
+			document.getElementById('statusLoadWorkers').innerHTML = "AS Pub";
 			alert("Ups!.. Não há resultado para sua busca.")
 			closeNavButton();
 		}
