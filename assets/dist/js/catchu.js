@@ -20,7 +20,7 @@ const renderTrabalhadores  = function (ver) {
 										const singleItem = element.data();
 										todosItems.push(singleItem);
 										todosItemsFiltros.push(singleItem);
-										todosTrabalhos.push(singleItem.district);
+										todosTrabalhos.push(singleItem.itemName);
 										console.log('Go '+element.itemName);
 									});
 
@@ -75,27 +75,14 @@ const renderTrabalhadoresCopia  = function (ver) {
 								
 						      }
 	else {
-					
-						       console.log("ver " +ver);
-						      
 									todosItems.forEach(element =>
 									{
-										//const singleItem = element.data();
-										//console.log("dff " +singleItem.district);
-										//| singleItem.experienciaDedistrict.search(ver)>=0
-										if (element.district.search(ver)>=0)
+										if (element.itemName.search(ver)>=0)
 										{ 
-											//todosItems.push(singleItem);
 											todosItemsFiltros.push(element);
-											console.log('Go '+element.itemName);
 										}
 									});
-
 									criarTrabalhadores(todosItemsFiltros);
-								
-						     
-
-						    //...
 		}
 
 	
@@ -303,48 +290,14 @@ criarTrabalhadores = function(todosItems)
 				  		
 						'</div>');	
 				
-				//a = element.id;
-				/*div1 = $('<div class="col-auto" style="width:180px; height:auto;">');
-				let div2 = $('<div class=" no-gutters border  flex-md-row mb-4 shadow-sm h-md-200 position-relative">');
-				let div3 = $('<div class="col-auto  d-flex flex-column position-static mx-auto d-block ">');
-
-				let imgU = $('<img src="'+element.mainPhoto+'" alt="Sem foto de perfil" class="bd-placeholder-img  mx-auto d-block img-fluid" style="height: auto; width: 100%;">');
-
-				let div4 = $('<div class="col  d-flex flex-column position-static btn-primary bg-danger" style="padding:1px;">');
-				let h6 = $('<h6 style="max-height: 60px;" class="p-2">'+element.itemName+'</h6>');
-				let strong = $('<strong style="font-size: 11px;" class="p-2">'+element.itemName+'</strong>');
-				let p1 = $('<label class="p-2"><b>'+element.district+'</b></label>')
-				let p2 = $('<label class="p-2">'+element.itemLocation+'</label>');
-				//let a = $('<a href="#"  class="stretched-link" style="color: white">Detalhes</a> onclick="clickGo()" id="Go"');*/
 				let button_ = $('<button style="border-radius:1px; width:100%; font-size:14px;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent bg-danger">Ver Detalhes</button>');
 				
 
 				button_.on('click', () =>
 				{
-					//alert(element.id);
 					clickGo(element.id);
-					
 				});
-				
-				/*a.onclick = function()
-				{
-					console.log('Here');
-				}*/
-
-			
-
 				tes.append(button_);
-				/*div4.append(imgU).append('</div>');
-
-				div2.append(div3);
-				div4.append(h6);
-				div4.append(strong);
-				div4.append(p1);
-				div4.append(p2).append('</div>');
-				//div4.append(a);
-				div4.append(button_);
-				div2.append(div4).append('</div>');
-				div1.append(div2).append('</div>');*/
 				
 				$('#row-write').append(tes);
 
@@ -352,8 +305,6 @@ criarTrabalhadores = function(todosItems)
 				document.getElementById('navBarWorkers').style.visibility = 'visible';
 				document.getElementById('statusLoadWorkers').innerHTML = "AS Pub";
 				closeNavButton();
-				//todosItems = [];
-
 			});
 
 		}else
